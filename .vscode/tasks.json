@@ -6,13 +6,13 @@
         {
             "label": "Build with Clang",
             "type": "shell",
-            "command": "clang++",
+            "command": "gcc",
             "args": [
-                "-std=c++17",
+                "-std=c++14",
                 "-stdlib=libc++",
-                "helloworld.cpp",
+                "math.cpp",
                 "-o",
-                "helloworld.out",
+                "math.out",
                 "--debug"
             ],
             "group": {

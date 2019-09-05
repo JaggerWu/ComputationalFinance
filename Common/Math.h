@@ -53,22 +53,6 @@ public:
     ~ComplexNumber();
 };
 
-ComplexNumber::ComplexNumber()
-{
-    re = 0.0f;
-    im = 0.0f;
-}
-
-void ComplexNumber::Set(double _re, double _im)
-{
-    re = _re;
-    im = _im;
-}
-
-ComplexNumber::~ComplexNumber()
-{
-}
-
 inline ComplexNumber operator+(ComplexNumber& a, ComplexNumber& b)
 {
     ComplexNumber c;

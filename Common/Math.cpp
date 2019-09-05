@@ -1,16 +1,21 @@
 #include <iostream>
 #include <stdio.h>
 
-#include "Common/Math.h"
+#include "Math.h"
 
+ComplexNumber::ComplexNumber()
+{
+    re = 0.0f;
+    im = 0.0f;
+}
 
-// ComplexNumber::ComplexNumber(/* args */)
-// {
-//     re = 0.0f;
-//     im = 0.0f;
-// }
+void ComplexNumber::Set(double _re, double _im)
+{
+    re = _re;
+    im = _im;
+}
 
-// ComplexNumber::~ComplexNumber()
-// {
-// }
+ComplexNumber::~ComplexNumber()
+{
+}
 

@@ -6,11 +6,12 @@
         {
             "label": "Build with Clang",
             "type": "shell",
-            "command": "gcc",
+            "command": "g++",
             "args": [
                 "-std=c++14",
                 "-stdlib=libc++",
                 "main.cpp",
+                "Common/math.cpp",
                 "-o",
                 "main.out",
                 "--debug"

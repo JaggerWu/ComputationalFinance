@@ -10,9 +10,9 @@
             "args": [
                 "-std=c++14",
                 "-stdlib=libc++",
-                "math.cpp",
+                "main.cpp",
                 "-o",
-                "math.out",
+                "main.out",
                 "--debug"
             ],
             "group": {

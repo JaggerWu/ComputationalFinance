@@ -1,3 +1,6 @@
+#ifndef MATH_H
+#define MATH_H
+
 #include <iostream>
 #include <stdio.h>
 
@@ -7,13 +10,11 @@ private:
     /* data */
 public:
     double re, im;
-    ComplexNumber(/* args */);
+    ComplexNumber();
 
-    void Set(double _re, double _im) 
-    {
-        re = _re;
-        im = _im;
-    }
+    ComplexNumber(double a, double b): re(a), im(b) {}
+
+    void Set(double _re, double _im);
 
     void operator+=(const ComplexNumber& cn)
     {
@@ -52,10 +53,16 @@ public:
     ~ComplexNumber();
 };
 
-ComplexNumber::ComplexNumber(/* args */)
+ComplexNumber::ComplexNumber()
 {
     re = 0.0f;
     im = 0.0f;
+}
+
+void ComplexNumber::Set(double _re, double _im)
+{
+    re = _re;
+    im = _im;
 }
 
 ComplexNumber::~ComplexNumber()
@@ -98,3 +105,5 @@ inline ComplexNumber operator/(ComplexNumber& a, ComplexNumber& b)
 
     return c;
 }
+
+#endif

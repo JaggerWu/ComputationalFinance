@@ -19,3 +19,36 @@ ComplexNumber::~ComplexNumber()
 {
 }
 
+void ComplexNumber::operator+=(const ComplexNumber& cn)
+{
+    re += cn.re;
+    im += cn.im;
+}
+
+void ComplexNumber::operator-=(const ComplexNumber& cn)
+{
+    re -= cn.re;
+    im -= cn.re;
+}
+
+void ComplexNumber::operator*=(const double d)
+{
+    re *= d;
+    im *= d;
+}
+
+bool ComplexNumber::operator==(const ComplexNumber other)
+{
+    if (re == other.re && im == other.im)
+    {
+        return true;
+    }
+    return false;
+}
+
+ComplexNumber& ComplexNumber::operator=(ComplexNumber& other)
+{
+    std::swap(re, other.re);
+    std::swap(im, other.im);
+    return *this;
+}

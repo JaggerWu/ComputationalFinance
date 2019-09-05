@@ -16,39 +16,15 @@ public:
 
     void Set(double _re, double _im);
 
-    void operator+=(const ComplexNumber& cn)
-    {
-        re += cn.re;
-        im += cn.im;
-    }
+    void operator+=(const ComplexNumber& cn);
 
-    void operator-=(const ComplexNumber& cn)
-    {
-        re -= cn.re;
-        im -= cn.re;
-    }
+    void operator-=(const ComplexNumber& cn);
 
-    void operator*=(const double d)
-    {
-        re *= d;
-        im *= d;
-    }
+    void operator*=(const double d);
 
-    bool operator==(const ComplexNumber other)
-    {
-        if (re == other.re && im == other.im)
-        {
-            return true;
-        }
-        return false;
-    }
+    bool operator==(const ComplexNumber other);
 
-    ComplexNumber& operator=(ComplexNumber& other)
-    {
-        std::swap(re, other.re);
-        std::swap(im, other.im);
-        return *this;
-    }
+    ComplexNumber& operator=(ComplexNumber& other);
 
     ~ComplexNumber();
 };

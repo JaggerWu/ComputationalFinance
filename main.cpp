@@ -12,7 +12,8 @@ int main()
 
     ComplexNumber c = a + b;
 
-    printf ("The complex number is (%f, %f)", c.re, c.im);
-
+    printf ("The complex number is (%f, %f) \n", c.re, c.im);
+    cout << (a==b) << endl;
+    
     return EXIT_SUCCESS;
 }

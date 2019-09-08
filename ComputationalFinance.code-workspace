@@ -6,7 +6,26 @@
 	],
 	"settings": {
 		"files.associations": {
-			"iostream": "cpp"
+			"iostream": "cpp",
+			"__functional_03": "cpp",
+			"__functional_base": "cpp",
+			"__hash_table": "cpp",
+			"algorithm": "cpp",
+			"bitset": "cpp",
+			"chrono": "cpp",
+			"condition_variable": "cpp",
+			"optional": "cpp",
+			"functional": "cpp",
+			"memory": "cpp",
+			"numeric": "cpp",
+			"random": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"system_error": "cpp",
+			"thread": "cpp",
+			"unordered_map": "cpp",
+			"utility": "cpp",
+			"vector": "cpp"
 		}
 	}
 }

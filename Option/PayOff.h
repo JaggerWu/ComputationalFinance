@@ -1,25 +1,40 @@
 #ifndef PAYOFF_H
 #define PAYOFF_H
 
-class PayOff
+enum OptionType
 {
-private:
-    /* data */
-public:
-    virtual double operator()(double spot) const=0;
-    PayOff(/* args */);
-
-    virtual ~PayOff();
-    virtual PayOff* clone() const=0;
+    call,
+    put,
 };
 
-PayOff::PayOff(/* args */)
+class PayOff
 {
-}
+public:
+    PayOff() {}
+    virtual double operator()(double spot) const=0;
+    virtual ~PayOff() {}
+};
 
-PayOff::~PayOff()
+class PayOffCall: public PayOff
 {
-}
+private:
+    double strike;
+    OptionType optionType = call;
+public:
+    PayOffCall(double Strike_);
+    virtual double operator()(double Spot_) const;
+    virtual ~PayOffCall() {}
+};
 
+class PayOffPut: public PayOff
+{
+private:
+    double strike;
+    OptionType optionType = put;
+public:
+    PayOffPut(double Strike_);
+    virtual double operator()(double Spot_) const;
+    virtual ~PayOffPut() {}
+};
 
 #endif

@@ -20,6 +20,12 @@ int main()
 
     cout << "The strike is" << 1.23 << endl;
     cout << "The pay off is " << call_(1.21) << endl;
+
+    PayOffDoubleDigital test(1.50, 1.30);
+    cout << "The pay off double digital is " << test(1.21) << endl;
+
+    PayOffDoubleDigital test2(DigitalType::lowerLevel, 1.1);
+    cout << "The pay off digital is " << test2(1.01) << endl;
     
     return EXIT_SUCCESS;
 }

@@ -17,3 +17,35 @@ double PayOffPut::operator() (double Spot_) const
 {
     return max(strike - Spot_, 0.0);
 }
+
+PayOffDigital::PayOffDigital(DigitalType digitalType_, double level_)
+{
+	type = digitalType_;
+	level = level_;
+}
+
+double PayOffDigital::operator()(double Spot_) const
+{
+	if(type == lowerLevel)
+	{
+		return Spot_ <= level ? 0 : 1;
+	}
+	else
+	{
+		return Spot_ >= level ? 0 : 1;
+	}
+}
+
+PayOffDoubleDigital::PayOffDoubleDigital(double lowerLevel_, double upperLevel_) : lowerLevel(lowerLevel_), upperLevel(upperLevel_)
+{
+}
+
+double PayOffDoubleDigital::operator () (double Spot) const
+{
+	if (Spot <= lowerLevel || Spot >= upperLevel) // -|| means or.
+	{
+		return 0;
+	}
+
+	return 1;
+}

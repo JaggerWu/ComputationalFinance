@@ -37,4 +37,32 @@ public:
     virtual ~PayOffPut() {}
 };
 
+
+enum DigitalType {
+    lowerLevel,
+    upperLevel,
+};
+
+class PayOffDigital: public PayOff
+{
+public:
+    double level;
+    DigitalType type;
+private:
+    PayOffDigital(DigitalType digitalType_, double level);
+    virtual double operator()(double Spot_) const;
+    virtual ~PayOffDigital() {}
+};
+
+class PayOffDoubleDigital: public PayOff
+{
+private:
+    double upperLevel, lowerLevel;
+public:
+    PayOffDoubleDigital(double upperLevel_, double lowerLevel_);
+    virtual double operator()(double Spot_) const;
+    virtual ~PayOffDoubleDigital() {}
+    
+};
+
 #endif

@@ -2,6 +2,7 @@
 #include<stdio.h>
 
 #include "Common/Math.h"
+#include "Common/Gaussian.h"
 #include "Option/PayOff.h"
 
 using namespace std;
@@ -26,6 +27,8 @@ int main()
 
     PayOffDoubleDigital test2(DigitalType::lowerLevel, 1.1);
     cout << "The pay off digital is " << test2(1.01) << endl;
+
+    cout << "Get gaussian is " << getOneGaussianByCLT()<< endl;
     
     return EXIT_SUCCESS;
 }

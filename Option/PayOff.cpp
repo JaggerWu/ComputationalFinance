@@ -26,7 +26,7 @@ PayOffDigital::PayOffDigital(DigitalType digitalType_, double level_)
 
 double PayOffDigital::operator()(double Spot_) const
 {
-	if(type == lowerLevel)
+	if(type == DigitalType::lowerLevel)
 	{
 		return Spot_ <= level ? 0 : 1;
 	}

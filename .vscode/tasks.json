@@ -12,6 +12,7 @@
                 "-stdlib=libc++",
                 "main.cpp",
                 "Common/math.cpp",
+                "Common/Gaussian.cpp",
                 "Option/PayOff.cpp",
                 "-o",
                 "main.out",

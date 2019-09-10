@@ -26,7 +26,10 @@ int main()
     cout << "The pay off double digital is " << test(1.21) << endl;
 
     PayOffDoubleDigital test2(DigitalType::lowerLevel, 1.1);
-    cout << "The pay off digital is " << test2(1.01) << endl;
+    PayOff* test3 = (PayOffDoubleDigital*)test2.clone();
+
+    cout << "The pay off digital(test2) is " << test2(1.01) << endl;
+    cout << "The pay off digital(test3) is " << test3->operator()(1.01) << endl;
 
     cout << "Get gaussian is " << getOneGaussianByCLT()<< endl;
     

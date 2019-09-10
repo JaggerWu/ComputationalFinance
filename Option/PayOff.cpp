@@ -11,11 +11,21 @@ double PayOffCall::operator() (double Spot_) const
     return max(Spot_ - strike, 0.0);
 }
 
+PayOff* PayOffCall::clone() const
+{
+	return new PayOffCall(*this);
+}
+
 PayOffPut::PayOffPut(double Strike_): strike(Strike_) {}
 
 double PayOffPut::operator() (double Spot_) const
 {
     return max(strike - Spot_, 0.0);
+}
+
+PayOff* PayOffPut::clone() const
+{
+	return new PayOffPut(*this);
 }
 
 PayOffDigital::PayOffDigital(DigitalType digitalType_, double level_)
@@ -36,6 +46,11 @@ double PayOffDigital::operator()(double Spot_) const
 	}
 }
 
+PayOff* PayOffDigital::clone() const
+{
+	return new PayOffDigital(*this);
+}
+
 PayOffDoubleDigital::PayOffDoubleDigital(double lowerLevel_, double upperLevel_) : lowerLevel(lowerLevel_), upperLevel(upperLevel_)
 {
 }
@@ -48,4 +63,9 @@ double PayOffDoubleDigital::operator () (double Spot) const
 	}
 
 	return 1;
+}
+
+PayOff* PayOffDoubleDigital::clone() const
+{
+	return new PayOffDoubleDigital(*this);
 }

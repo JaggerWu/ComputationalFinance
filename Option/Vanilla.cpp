@@ -50,5 +50,6 @@ VanillaOption& VanillaOption::operator=(const VanillaOption &original)
 		delete thePayoffPtr;
 		thePayoffPtr = original.thePayoffPtr->clone();
 	}
+	
 	return *this;
 }

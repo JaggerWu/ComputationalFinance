@@ -16,6 +16,8 @@ public:
 
     void Set(double _re, double _im);
 
+    ComplexNumber& operator + (ComplexNumber& other);
+
     void operator+=(const ComplexNumber& cn);
 
     void operator-=(const ComplexNumber& cn);
@@ -29,14 +31,14 @@ public:
     ~ComplexNumber();
 };
 
-inline ComplexNumber operator+(ComplexNumber& a, ComplexNumber& b)
-{
-    ComplexNumber c;
-    c.im = a.im + b.im;
-    c.re = a.re + b.re;
+// inline ComplexNumber operator+(ComplexNumber& a, ComplexNumber& b)
+// {
+//     ComplexNumber c;
+//     c.im = a.im + b.im;
+//     c.re = a.re + b.re;
 
-    return c;
-}
+//     return c;
+// }
 
 inline ComplexNumber operator-(ComplexNumber& a, ComplexNumber& b)
 {

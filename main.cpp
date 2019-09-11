@@ -9,13 +9,21 @@ using namespace std;
 
 int main()
 {
+    ComplexNumber tt;
+
+    tt.Set(0.5f, 0.6f);
     ComplexNumber a(1.0f, 2.0f);
     ComplexNumber b(2.0f, 3.0f);
 
     ComplexNumber c = a + b;
+    ComplexNumber d = a;
+    a += b;
 
     printf ("The complex number is (%f, %f) \n", c.re, c.im);
-    cout << (a==b) << endl;
+    cout << (a == b) << endl;
+
+    printf ("The complex number is (%f, %f) \n", d.re, d.im);
+    printf ("The complex number is (%f, %f) \n", a.re, a.im);
 
     PayOffCall call_(1.20);
 

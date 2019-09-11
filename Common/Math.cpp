@@ -48,7 +48,20 @@ bool ComplexNumber::operator==(const ComplexNumber other)
 
 ComplexNumber& ComplexNumber::operator=(ComplexNumber& other)
 {
-    std::swap(re, other.re);
-    std::swap(im, other.im);
+    if (this != &other)
+    {
+        re = other.re;
+        im = other.im;
+    }
+    
     return *this;
 }
+
+ComplexNumber& ComplexNumber::operator+(ComplexNumber& other)
+{
+    ComplexNumber newOne;
+
+    newOne.Set(other.re + re, other.im + im);
+    
+    return newOne;
+} 

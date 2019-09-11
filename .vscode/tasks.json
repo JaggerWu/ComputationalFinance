@@ -10,6 +10,7 @@
             "args": [
                 "-std=c++14",
                 "-stdlib=libc++",
+                "-I${workspaceFolder}",
                 "main.cpp",
                 "Common/math.cpp",
                 "Common/Gaussian.cpp",

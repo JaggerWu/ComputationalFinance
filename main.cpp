@@ -15,7 +15,7 @@ int main()
     ComplexNumber a(1.0f, 2.0f);
     ComplexNumber b(2.0f, 3.0f);
 
-    ComplexNumber c = a + b;
+    ComplexNumber c = a - b;
     ComplexNumber d = a;
     a += b;
 

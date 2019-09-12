@@ -59,9 +59,14 @@ ComplexNumber& ComplexNumber::operator=(ComplexNumber& other)
 
 ComplexNumber& ComplexNumber::operator+(ComplexNumber& other)
 {
-    ComplexNumber newOne;
-
-    newOne.Set(other.re + re, other.im + im);
+    ComplexNumber* ptr = new ComplexNumber(other.re + re, other.im + im);
     
-    return newOne;
+    return (*ptr);
+} 
+
+ComplexNumber& ComplexNumber::operator-(ComplexNumber& other)
+{
+    ComplexNumber* ptr = new ComplexNumber(re - other.re, im - other.im);
+    
+    return (*ptr);
 } 

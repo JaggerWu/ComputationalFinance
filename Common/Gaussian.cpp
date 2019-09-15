@@ -16,7 +16,8 @@ double getOneGaussianByCLT()
     for (unsigned j = 0; j < 12; j++)
     {
         double a = getOneUniform();
-        std::cout << "The rand number is " << a << std::endl;
+        // std::cout << "The rand number is " << a << std::endl;
+        result += a;
     }
     
     return result;

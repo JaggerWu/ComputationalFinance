@@ -9,17 +9,21 @@ using namespace std;
 
 int main()
 {
-    ComplexNumber tt;
+    ComplexNumber* tt = new ComplexNumber;
 
-    tt.Set(0.5f, 0.6f);
+    tt->Set(0.5f, 0.6f);
+
+    delete tt;
     ComplexNumber a(1.0f, 2.0f);
     ComplexNumber b(2.0f, 3.0f);
 
-    ComplexNumber c = a - b;
+    *tt = a - b;
     ComplexNumber d = a;
     a += b;
 
-    printf ("The complex number is (%f, %f) \n", c.re, c.im);
+    printf ("The complex number is (%f, %f) \n", tt->re, tt->im);
+    delete tt;
+
     cout << (a == b) << endl;
 
     printf ("The complex number is (%f, %f) \n", d.re, d.im);
@@ -34,7 +38,7 @@ int main()
     cout << "The pay off double digital is " << test(1.21) << endl;
 
     PayOffDoubleDigital test2(DigitalType::lowerLevel, 1.1);
-    PayOff* test3 = (PayOffDoubleDigital*)test2.clone();
+    PayOff* test3 = test2.clone();
 
     cout << "The pay off digital(test2) is " << test2(1.01) << endl;
     cout << "The pay off digital(test3) is " << test3->operator()(1.01) << endl;

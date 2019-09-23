@@ -75,7 +75,13 @@
 			"streambuf": "cpp",
 			"tuple": "cpp",
 			"type_traits": "cpp",
-			"typeinfo": "cpp"
+			"typeinfo": "cpp",
+			"__tree": "cpp",
+			"bit": "cpp",
+			"codecvt": "cpp",
+			"forward_list": "cpp",
+			"map": "cpp",
+			"stack": "cpp"
 		}
 	}
 }
